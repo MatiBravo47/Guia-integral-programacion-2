@@ -1,4 +1,4 @@
-﻿using Guia_integral_programacion.Interfaces;
+﻿using Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,18 +7,18 @@ using System.Threading.Tasks;
 
 namespace Utils
 {
-    public class FacturaPrinter : IImpresionPapel, IImpresionDigital 
+    public class InvoicePrinter : IPaperPrint, IDigitalPrint 
     {
-        public void Imprimir() 
+        public void Print() 
         {
             Console.WriteLine("Impresion generica");
         }
-        public void ImprimirEnPapel() 
+        public void PrintOnPaper() 
         {
             Console.WriteLine("Imprimiento factura en papel");
         }
 
-        public void ImprimirDigital() 
+        public void PrintDigital() 
         {
             Console.WriteLine("Enviando factura por email..");
         }

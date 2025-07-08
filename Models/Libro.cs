@@ -6,20 +6,20 @@ using System.Threading.Tasks;
 
 namespace Models
 {
-    public class Libro
+    public class Book
     {
-        public string Titulo { get; set; }
-        public string Autor { get; set; }
+        public string Title { get; set; }
+        public string Author { get; set; }
         public string ISBN { get; set; }
-        public Boolean Disponibilidad { get; set; }
+        public Boolean Available { get; set; }
 
-        public Libro() { }
-        public Libro(string titulo, string autor, string iSBN, bool disponibilidad)
+        public Book() { }
+        public Book(string title, string author, string iSBN, bool available)
         {
-            Titulo = titulo;
-            Autor = autor;
+            Title = title;
+            Author = author;
             ISBN = iSBN;
-            Disponibilidad = disponibilidad;
+            Available = available;
         }
     }
 }

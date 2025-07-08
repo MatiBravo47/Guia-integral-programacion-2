@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 
 namespace Models
 {
-    public class Gato : Animal 
+    public class Cat : Animal 
     {
-        public Gato(string nombre) : base(nombre) { }
+        public Cat(string name) : base(name) { }
 
-        public override string EmitirSonido()
+        public override string MakeSound()
         {
             return "Miau";
         }
 
-        public override string Presentarse()
+        public override string Introduce()
         {
-            return $"Soy un gato llamado {Nombre} y hago {EmitirSonido()}";
+            return $"Soy un gato llamado {Name} y hago {MakeSound()}";
         }
     }
 }

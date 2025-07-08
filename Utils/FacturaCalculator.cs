@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Utils
 {
-    internal class FacturaCalculator
+    public class InvoiceCalculator
     {
-        public double CalcularTotal() 
+        public double CalculateTotal() 
         {
             //Logica real de calculo
             return 100;

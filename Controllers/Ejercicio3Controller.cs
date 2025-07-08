@@ -13,11 +13,11 @@ namespace Controllers
         {
             Console.Title = "Principios SOLID";
 
-            var calculadora = new FacturaCalculator();
-            var impresora = new FacturaPrinter();
-            var guardador = new FacturaSaver();
+            var calculator = new InvoiceCalculator();
+            var printer = new InvoicePrinter();
+            var saver = new InvoiceSaver();
 
-            double total = calculadora.CalcularTotal();
+            double total = calculator.CalculateTotal();
             
 
             while (true)
@@ -27,17 +27,17 @@ namespace Controllers
                 Console.WriteLine("2. Digital");
                 Console.WriteLine("3. Salir");
 
-                string opcion3 = Console.ReadLine();
+                string option = Console.ReadLine();
 
-                switch (opcion3)
+                switch (option)
                 {
-                    case "1": Console.Clear(); impresora.ImprimirEnPapel(); break;
-                    case "2": Console.Clear(); impresora.ImprimirDigital(); break;
+                    case "1": Console.Clear(); printer.PrintOnPaper(); break;
+                    case "2": Console.Clear(); printer.PrintDigital(); break;
                     case "3": return;
                     default: Console.WriteLine("Opcion incorrecta, presione una tecla para volver al menu"); break;
                 }
                 Console.WriteLine($"Total de la factura: {total}");
-                guardador.Guardar();
+                saver.Save();
                 Console.WriteLine("Presione una tecla para continuar...");
             }
         }

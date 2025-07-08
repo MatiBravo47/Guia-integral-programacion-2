@@ -14,10 +14,10 @@ namespace Controllers
     {
         private List<Product> productList = new List<Product>();
 
-        public void MenuProducto()
+        public void ProductMenu()
         {
             Console.Title = "CRUD + JSON + Repository";
-            string opcionMenu;
+            string option;
             while (true)
             {
                 Console.Clear();
@@ -27,8 +27,8 @@ namespace Controllers
                 Console.WriteLine("3. Modificar un producto");
                 Console.WriteLine("4. Mostrar todos los productos");
                 Console.WriteLine("5. Volver");
-                opcionMenu = Console.ReadLine();
-                switch (opcionMenu)
+                option = Console.ReadLine();
+                switch (option)
                 {
                     case "1":
                         Console.Clear(); CreateProduct(); Console.ReadKey(); break;

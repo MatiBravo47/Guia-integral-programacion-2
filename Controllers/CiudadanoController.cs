@@ -14,17 +14,17 @@ namespace Controllers
         {
             Console.Title = "Fundamentos de POO";
 
-            var ciudadano1 = new Ciudadano("Juan Perez", "12345678", 25);
-            var ciudadano2 = new Ciudadano("Marta Lopez", "12345678", 16);
-            var ciudadano3 = CiudadanoView.CrearCiudadano();
+            var citizen1 = new Citizen("Juan Perez", "12345678", 25);
+            var citizen2 = new Citizen("Marta Lopez", "12345678", 16);
+            var citizen3 = CitizenView.CreateCitizen();
 
-            Console.WriteLine(ciudadano1.Saludar());
-            Console.WriteLine(ciudadano2.Saludar());
-            Console.WriteLine(ciudadano3.Saludar());
+            Console.WriteLine(citizen1.Greet());
+            Console.WriteLine(citizen2.Greet());
+            Console.WriteLine(citizen3.Greet());
 
-            Console.WriteLine(ciudadano1.MostrarEstadoMayorEdad());
-            Console.WriteLine(ciudadano2.MostrarEstadoMayorEdad());
-            Console.WriteLine(ciudadano3.MostrarEstadoMayorEdad());
+            Console.WriteLine(citizen1.ShowAdultStatus());
+            Console.WriteLine(citizen2.ShowAdultStatus());
+            Console.WriteLine(citizen3.ShowAdultStatus());
 
             Console.WriteLine("Presione una tecla para continuar...");
             Console.ReadKey();

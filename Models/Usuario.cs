@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace Models
 {
-    public class Usuario
+    public class User
     {
-        public string Nombre { get; set; }
+        public string Name { get; set; }
         public string Email { get; set; }
 
-        public Usuario() { }
-        public Usuario(string nombre, string email) 
+        public User() { }
+        public User(string name, string email) 
         {
-            this.Nombre = nombre;
+            this.Name = name;
             this.Email = email;
         }
     }

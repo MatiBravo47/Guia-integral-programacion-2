@@ -13,11 +13,11 @@ namespace Controllers
         {
             Console.Title = "Herencia y Polimorfismo";
 
-            var perro1 = new Perro("Leila");
-            var gato1 = new Gato("Luke");
+            var dog1 = new Dog("Leila");
+            var cat1 = new Cat("Luke");
 
-            Console.WriteLine(perro1.Presentarse());
-            Console.WriteLine(gato1.Presentarse());
+            Console.WriteLine(dog1.Introduce());
+            Console.WriteLine(cat1.Introduce());
 
             Console.WriteLine("Presione una tecla para continuar...");
             Console.ReadKey();

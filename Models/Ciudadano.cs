@@ -21,45 +21,43 @@ using System.Threading.Tasks;
 
 namespace Models
 {
-    public class Ciudadano
+    public class Citizen
     {
-        public string NombreCompleto { get; set; }
+        public string FullName { get; set; }
         public string DNI { get; set; }
-        private int edad;
-        public int Edad
+        private int age;
+        public int Age
         {
-            get => edad;
+            get => age;
             set 
             {
                 if (value < 0)
                     throw new ArgumentException("La edad no puede ser negativa");
-                edad = value;
+                age = value;
             }
         }
-        //Constructor vacio
-        public Ciudadano() { }
+        public Citizen() { }
         
-        //Constructor completo
-        public Ciudadano(string nombreCompleto, string dni, int edad) {
-            NombreCompleto = nombreCompleto;
+        public Citizen(string fullName, string dni, int age) {
+            FullName = fullName;
             DNI = dni;
-            Edad = edad;
+            Age = age;
         }
 
-        public bool MayorEdad() {
-            return Edad >= 18;
+        public bool IsAdult() {
+            return Age >= 18;
         }
 
-        public string Saludar() {
-            return $"Hola, mi nombre es {NombreCompleto} y tengo {Edad} años";
+        public string Greet() {
+            return $"Hola, mi nombre es {FullName} y tengo {Age} años";
         }
 
-        public string MostrarEstadoMayorEdad()
+        public string ShowAdultStatus()
         {
-            if (MayorEdad())
-                return $"{NombreCompleto} es mayor de edad ({Edad})";
+            if (IsAdult())
+                return $"{FullName} es mayor de edad ({Age})";
             else
-                return $"{NombreCompleto} es menor de edad ({Edad})";
+                return $"{FullName} es menor de edad ({Age})";
         }
     }
 }

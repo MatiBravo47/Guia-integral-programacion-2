@@ -7,18 +7,18 @@ using System.Threading.Tasks;
 
 namespace Views
 {
-    public class CiudadanoView
+    public class CitizenView
     {
-        public static int PedirEdadValida()
+        public static int RequestValidAge()
         {
             while (true)
             {
                 Console.Write("Ingrese edad: ");
                 string input = Console.ReadLine();
-                if (int.TryParse(input, out int edad))
+                if (int.TryParse(input, out int age))
                 {
-                    if (edad >= 0)
-                        return edad;
+                    if (age >= 0)
+                        return age;
                     else
                         Console.WriteLine("La edad no puede ser negativa. Intente nuevamente.");
                 }
@@ -28,17 +28,17 @@ namespace Views
                 }
             }
         }
-        public static Ciudadano CrearCiudadano()
+        public static Citizen CreateCitizen()
         {
             Console.Write("Ingrese nombre completo: ");
-            string nombre = Console.ReadLine();
+            string fullName = Console.ReadLine();
 
             Console.Write("Ingrese DNI: ");
             string dni = Console.ReadLine();
 
-            int edad = PedirEdadValida();
+            int age = RequestValidAge();
             Console.Clear();
-            return new Ciudadano(nombre, dni, edad);
+            return new Citizen(fullName, dni, age);
         }
     }
 }

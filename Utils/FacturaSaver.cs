@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Utils
 {
-    public class FacturaSaver
+    public class InvoiceSaver
     {
-        public void Guardar() 
+        public void Save() 
         {
             Console.WriteLine("Guardando factura en base de datos");
         }

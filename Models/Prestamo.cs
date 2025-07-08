@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Models
 {
-    public class Prestamo
+    public class Loan
     {
-        public Libro Libro { get; set; }
-        public Usuario Usuario { get; set; }
-        public DateTime Fecha { get; set; }
+        public Book Book { get; set; }
+        public User User { get; set; }
+        public DateTime Date { get; set; }
     }
 }

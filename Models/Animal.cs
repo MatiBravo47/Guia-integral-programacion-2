@@ -26,22 +26,22 @@ namespace Models
 {
     public class Animal
     {
-        public string Nombre { get; set; }
+        public string Name { get; set; }
 
         public Animal() { }
 
-        public Animal(string nombre) {
-            Nombre = nombre;
+        public Animal(string name) {
+            Name = name;
         }
 
-        public virtual string EmitirSonido() 
+        public virtual string MakeSound() 
         {
             return "Sonido generico";
         }
 
-        public virtual string Presentarse()
+        public virtual string Introduce()
         {
-            return $"Soy un animal llamado {Nombre} y hago {EmitirSonido()}";
+            return $"Soy un animal llamado {Name} y hago {MakeSound()}";
         }
     }
 }

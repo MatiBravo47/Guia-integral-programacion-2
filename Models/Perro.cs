@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 
 namespace Models
 {
-    public class Perro : Animal
+    public class Dog : Animal
     {
-        public Perro(string nombre) : base(nombre) { }
+        public Dog(string name) : base(name) { }
         
-        public override string EmitirSonido()
+        public override string MakeSound()
         {
             return "Guau!";
         }
 
-        public override string Presentarse()
+        public override string Introduce()
         {
-            return $"Soy un perro llamado {Nombre} y hago {EmitirSonido()}";
+            return $"Soy un perro llamado {Name} y hago {MakeSound()}";
         }
     }
 }

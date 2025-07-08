@@ -9,22 +9,22 @@ namespace Views
 {
     public class BookView
     {
-        public static Libro CreateBook() 
+        public static Book CreateBook() 
         {
             Console.WriteLine("Creando nuevo libro");
             Console.Write("Titulo: ");
-            string name = Console.ReadLine();
+            string title = Console.ReadLine();
             Console.Write("Autor: ");
-            string autor = Console.ReadLine();
+            string author = Console.ReadLine();
             Console.Write("ISBN: ");
             string ISBN = Console.ReadLine();
-            Boolean disponibilidad = true;
-            return new Libro(name, autor, ISBN, disponibilidad);
+            Boolean available = true;
+            return new Book(title, author, ISBN, available);
         }
 
-        public static void MostrarLibros(List<Libro> libros)
+        public static void ShowBooks(List<Book> books)
         {
-            if (libros == null || libros.Count == 0)
+            if (books == null || books.Count == 0)
             {
                 Console.WriteLine("No hay libros registrados.");
                 return;
@@ -33,11 +33,9 @@ namespace Views
             Console.WriteLine("=== Lista de libros ===");
             Console.WriteLine("{0,-6} {1,-35} {2,-30} {3,-15} {4,-12}", "Índice", "Título", "Autor", "ISBN", "Disponible");
             Console.WriteLine(new string('-', 100));
-            //Console.WriteLine("Indice Titulo                     Autor           ISBN            Disponible  ");
-            //Console.WriteLine("--------------------------------");
-            foreach (var libro in libros)
+            foreach (var book in books)
             {
-                Console.WriteLine("{0,-6} {1,-35} {2,-30} {3,-15} {4,-12}",index, libro.Titulo, libro.Autor, libro.ISBN, libro.Disponibilidad);
+                Console.WriteLine("{0,-6} {1,-35} {2,-30} {3,-15} {4,-12}",index, book.Title, book.Author, book.ISBN, book.Available);
                 index++;
             }
         }

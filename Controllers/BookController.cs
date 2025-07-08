@@ -11,12 +11,12 @@ namespace Controllers
 {
     public class BookController
     {
-        private List<Libro> bookList = new List<Libro>();
+        private List<Book> bookList = new List<Book>();
 
-        public void MenuLibro()
+        public void BookMenu()
         {
-            var prestamoController = new PrestamoController();
-            string opcionLibro;
+            var loanController = new LoanController();
+            string bookOption;
             while (true)
             {
                 Console.Clear();
@@ -28,34 +28,34 @@ namespace Controllers
                 Console.WriteLine("5. Eliminar préstamo (Devolver libro)");
                 Console.WriteLine("6. Volver");
                 Console.Write("Seleccione una opción: ");
-                opcionLibro = Console.ReadLine();
+                bookOption = Console.ReadLine();
 
-                switch (opcionLibro)
+                switch (bookOption)
                 {
                     case "1":
                         Console.Clear();
-                        var nuevoLibro = BookView.CreateBook();
-                        AgregarLibro(nuevoLibro);
+                        var newBook = BookView.CreateBook();
+                        AddBook(newBook);
                         Console.ReadKey();
                         break;
                     case "2":
                         Console.Clear();
-                        ListarLibros();
+                        ListBooks();
                         Console.ReadKey();
                         break;
                     case "3":
                         Console.Clear();
-                        prestamoController.CreatePrestamo();
+                        loanController.CreateLoan();
                         Console.ReadKey();
                         break;
                     case "4":
                         Console.Clear();
-                        prestamoController.ShowPrestamo();
+                        loanController.ShowLoans();
                         Console.ReadKey();
                         break;
                     case "5":
                         Console.Clear();
-                        prestamoController.DeletePrestamo();
+                        loanController.DeleteLoan();
                         Console.ReadKey();
                         break;
                     case "6":
@@ -69,26 +69,26 @@ namespace Controllers
         }
         public void LoadBooks()
         {
-            bookList = ProductoRepository.Repository<Libro>.ObtenerTodos("books");
+            bookList = ProductoRepository.Repository<Book>.ObtenerTodos("books");
         }
         public void SaveBooks()
         {
-            ProductoRepository.Repository<Libro>.GuardarLista("books", bookList);
+            ProductoRepository.Repository<Book>.GuardarLista("books", bookList);
         }
-        public List<Libro> ListaLibros => bookList;
+        public List<Book> BookList => bookList;
         public BookController()
         {
             LoadBooks();
         }
-        public void AgregarLibro(Libro libro)
+        public void AddBook(Book book)
         {
-            bookList.Add(libro);
+            bookList.Add(book);
             SaveBooks();
             Console.WriteLine("Libro agregado correctamente");
         }
-        public void ListarLibros() 
+        public void ListBooks() 
         {
-            BookView.MostrarLibros(ListaLibros);
+            BookView.ShowBooks(BookList);
         }
     }
 }

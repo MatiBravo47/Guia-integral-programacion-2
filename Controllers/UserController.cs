@@ -11,8 +11,8 @@ namespace Controllers
 {
     public class UserController
     {
-        public Usuario CreateUser() => UserView.CreateUser();
+        public User CreateUser() => UserView.CreateUser();
 
-        public void ShowUsers(Usuario usuario) => UserView.ShowUser(usuario);
+        public void ShowUsers(User user) => UserView.ShowUser(user);
     }
 }

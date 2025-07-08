@@ -44,12 +44,12 @@ namespace Controllers
                     case "4":
                         Console.Clear();
                         var productController = new ProductController();
-                        productController.MenuProducto();
+                        productController.ProductMenu();
                         break;
                     case "5":
                         Console.Clear();
                         var bookController = new BookController();
-                        bookController.MenuLibro();
+                        bookController.BookMenu();
                         break;
                     case "6":
                         return;

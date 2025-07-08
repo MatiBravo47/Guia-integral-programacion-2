@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Guia_integral_programacion.Interfaces
+namespace Interfaces
 {
-    public interface IImpresionPapel : IImprimible
+    public interface IPaperPrint : IPrint
     {
-        void ImprimirEnPapel();
+        void PrintOnPaper();
     }
 }

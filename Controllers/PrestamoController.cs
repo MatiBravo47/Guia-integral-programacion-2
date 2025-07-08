@@ -9,78 +9,80 @@ using Views;
 
 namespace Controllers
 {
-    public class PrestamoController
+    public class LoanController
     {
-        private List<Prestamo> prestamosList = new List<Prestamo>();
+        private List<Loan> loanList = new List<Loan>();
         private UserController uController;
         private BookController bController;
-        private List<Libro> listaLibros;
+        private List<Book> bookList;
 
-        public PrestamoController()
+        public LoanController()
         {
             uController = new UserController();
             bController = new BookController();
-            LoadPrestamos();
+            LoadLoans();
         }
 
-        public void LoadPrestamos()
+        public void LoadLoans()
         {
-            prestamosList = ProductoRepository.Repository<Prestamo>.ObtenerTodos("prestamos");
+            loanList = ProductoRepository.Repository<Loan>.ObtenerTodos("loans");
         }
 
         public void SavePrestamos() 
         {
-            ProductoRepository.Repository<Prestamo>.GuardarLista("prestamos", prestamosList);
+            ProductoRepository.Repository<Loan>.GuardarLista("loans", loanList);
         }
 
-        public void CreatePrestamo() 
+        public void CreateLoan() 
         {
             var newUser = uController.CreateUser();
 
-            bController.ListarLibros();
+            bController.ListBooks();
 
             PrestamoView.ShowMessage("Elija indice del libro a seleccionar");
             int seleccion = int.Parse(Console.ReadLine());
-            var libroSeleccionado = bController.ListaLibros[seleccion];
+            var libroSeleccionado = bController.BookList[seleccion];
 
-            if (!libroSeleccionado.Disponibilidad) 
+            if (!libroSeleccionado.Available) 
             {
                 PrestamoView.ShowMessage("El libro seleccionado no esta disponible");
                 return;
             }
 
-            Prestamo newPrestamo = new Prestamo();
+            Loan newLoan = new Loan();
 
-            newPrestamo.Libro = libroSeleccionado;
-            newPrestamo.Usuario = newUser;
-            newPrestamo.Fecha = DateTime.Now;
+            newLoan.Book = libroSeleccionado;
+            newLoan.User = newUser;
+            newLoan.Date = DateTime.Now;
 
-            libroSeleccionado.Disponibilidad = false;
+            libroSeleccionado.Available = false;
             bController.SaveBooks();
 
-            prestamosList.Add(newPrestamo);
+            loanList.Add(newLoan);
             SavePrestamos();
             
             PrestamoView.ShowMessage("Préstamo registrado correctamente.");
         }
 
-        public void ShowPrestamo()
+        public void ShowLoans()
         {
             int index = 0;
-            foreach (var prestamo in prestamosList)
+            Console.WriteLine("==Lista de prestamos==");
+            Console.WriteLine("{0,-6} {1,-35} {2,-20} {3,-35} {4,-12}",
+    "Índice", "Usuario", "Fecha", "Titulo", "Disponible");
+            foreach (var loan in loanList)
             {
-                Console.WriteLine($"Indice: {index}");
-                Console.WriteLine($"Usuario: {prestamo.Usuario.Nombre}, Fecha: {prestamo.Fecha}, Libro: {prestamo.Libro.Titulo}");
+                Console.WriteLine("{0,-6} {1,-35} {2,-20} {3,-35} {4,-12}", index, loan.User.Name, loan.Date, loan.Book.Title, loan.Book.Available);
                 index ++;
             }
         }
 
-        public void DeletePrestamo()
+        public void DeleteLoan()
         {
-            ShowPrestamo();
+            ShowLoans();
             Console.WriteLine("Ingrese indice que desea eliminar");
             int indiceSeleccionado = int.Parse(Console.ReadLine());
-            prestamosList.RemoveAt(indiceSeleccionado);
+            loanList.RemoveAt(indiceSeleccionado);
             SavePrestamos() ;
             Console.WriteLine("Prestamo eliminado");
         }

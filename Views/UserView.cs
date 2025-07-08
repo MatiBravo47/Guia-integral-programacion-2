@@ -9,7 +9,7 @@ namespace Views
 {
     public class UserView
     {
-        public static Usuario CreateUser()
+        public static User CreateUser()
         {
             Console.WriteLine("Creando usuario");
             Console.Write("Nombre: ");
@@ -17,12 +17,12 @@ namespace Views
             Console.Write("Email: ");
             string email = Console.ReadLine();
 
-            return new Usuario(name, email);
+            return new User(name, email);
         }
 
-        public static void ShowUser(Usuario usuario) 
+        public static void ShowUser(User user) 
         {
-            Console.WriteLine($"Nombre: {usuario.Nombre}, email: {usuario.Email}");
+            Console.WriteLine($"Nombre: {user.Name}, email: {user.Email}");
         }
 
     }
