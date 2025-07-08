@@ -8,9 +8,9 @@ using Views;
 
 namespace Controllers
 {
-    public class CiudadanoController
+    public class CitizenController
     {
-        public void EjecutarEjercicioCiudadano() 
+        public void EjecutarEjercicio1() 
         {
             Console.Title = "Fundamentos de POO";
 

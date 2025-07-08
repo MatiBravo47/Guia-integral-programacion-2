@@ -10,5 +10,11 @@
     "Name": "Tenedor",
     "Price": 30,
     "Stock": 20
+  },
+  {
+    "Id": 30,
+    "Name": "Mate",
+    "Price": 600,
+    "Stock": 10
   }
 ]

@@ -8,7 +8,7 @@ namespace Controllers
 {
     public class MenuPrincipalController
     {
-        public void MostrarMenu()
+        public void ShowMenu()
         {
             Console.Title = "Guia integral programacion";
             while (true)
@@ -28,8 +28,8 @@ namespace Controllers
                 {
                     case "1":
                         Console.Clear();
-                        var ciudadanoController = new CiudadanoController();
-                        ciudadanoController.EjecutarEjercicioCiudadano();
+                        var citizenController = new CitizenController();
+                        citizenController.EjecutarEjercicio1();
                         break;
                     case "2":
                         Console.Clear();

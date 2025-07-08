@@ -28,7 +28,7 @@ namespace Controllers
             loanList = ProductoRepository.Repository<Loan>.ObtenerTodos("loans");
         }
 
-        public void SavePrestamos() 
+        public void SaveLoans() 
         {
             ProductoRepository.Repository<Loan>.GuardarLista("loans", loanList);
         }
@@ -39,13 +39,13 @@ namespace Controllers
 
             bController.ListBooks();
 
-            PrestamoView.ShowMessage("Elija indice del libro a seleccionar");
+            LoanView.ShowMessage("Elija indice del libro a seleccionar");
             int seleccion = int.Parse(Console.ReadLine());
             var libroSeleccionado = bController.BookList[seleccion];
 
             if (!libroSeleccionado.Available) 
             {
-                PrestamoView.ShowMessage("El libro seleccionado no esta disponible");
+                LoanView.ShowMessage("El libro seleccionado no esta disponible");
                 return;
             }
 
@@ -59,9 +59,9 @@ namespace Controllers
             bController.SaveBooks();
 
             loanList.Add(newLoan);
-            SavePrestamos();
+            SaveLoans();
             
-            PrestamoView.ShowMessage("Préstamo registrado correctamente.");
+            LoanView.ShowMessage("Préstamo registrado correctamente.");
         }
 
         public void ShowLoans()
@@ -72,7 +72,7 @@ namespace Controllers
     "Índice", "Usuario", "Fecha", "Titulo", "Disponible");
             foreach (var loan in loanList)
             {
-                Console.WriteLine("{0,-6} {1,-35} {2,-20} {3,-35} {4,-12}", index, loan.User.Name, loan.Date, loan.Book.Title, loan.Book.Available);
+                Console.WriteLine("{0,-6} {1,-35} {2,-20} {3,-35} {4,-9}", index, loan.User.Name, loan.Date, loan.Book.Title, loan.Book.Available);
                 index ++;
             }
         }
@@ -83,7 +83,7 @@ namespace Controllers
             Console.WriteLine("Ingrese indice que desea eliminar");
             int indiceSeleccionado = int.Parse(Console.ReadLine());
             loanList.RemoveAt(indiceSeleccionado);
-            SavePrestamos() ;
+            SaveLoans() ;
             Console.WriteLine("Prestamo eliminado");
         }
     }

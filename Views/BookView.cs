@@ -31,7 +31,7 @@ namespace Views
             }
             int index = 0;
             Console.WriteLine("=== Lista de libros ===");
-            Console.WriteLine("{0,-6} {1,-35} {2,-30} {3,-15} {4,-12}", "Índice", "Título", "Autor", "ISBN", "Disponible");
+            Console.WriteLine("{0,-6} {1,-20} {2,-20} {3,-15} {4,-12}", "Índice", "Título", "Autor", "ISBN", "Disponible");
             Console.WriteLine(new string('-', 100));
             foreach (var book in books)
             {

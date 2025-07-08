@@ -13,7 +13,7 @@ namespace Guia_integral_programacion
         {
             Console.Title = "Guia integral programacion";
             var menuController = new MenuPrincipalController();
-            menuController.MostrarMenu();
+            menuController.ShowMenu();
         }
     }
 }

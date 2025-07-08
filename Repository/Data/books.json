@@ -1,44 +1,20 @@
 [
   {
-    "Titulo": "Libro de la selva",
-    "Autor": "Autor1",
-    "ISBN": "aaaddd",
-    "Disponibilidad": true
+    "Title": "Cien a\u00F1os de soledad",
+    "Author": "Gabriel Garc\u00EDa M\u00E1rquez",
+    "ISBN": "1122334455",
+    "Available": true
   },
   {
-    "Titulo": "Cronicas de una muerte anunciada",
-    "Autor": "Autor3",
-    "ISBN": "11122233",
-    "Disponibilidad": true
+    "Title": "El se\u00F1or de los anillos",
+    "Author": "J.R.R. Tolkien",
+    "ISBN": "1122334455",
+    "Available": true
   },
   {
-    "Titulo": "Cien a\u00F1os de soledad",
-    "Autor": "Gabriel Garc\u00EDa M\u00E1rquez",
-    "ISBN": "0123456789",
-    "Disponibilidad": true
-  },
-  {
-    "Titulo": "El se\u00F1or de los anillos",
-    "Autor": "J.R.R. Tolkien",
-    "ISBN": "123456789X",
-    "Disponibilidad": false
-  },
-  {
-    "Titulo": "1984",
-    "Autor": "George Orwell",
-    "ISBN": "112233445566",
-    "Disponibilidad": false
-  },
-  {
-    "Titulo": "El principito",
-    "Autor": "Antoine de Saint-Exup\u00E9ry",
-    "ISBN": "334455667788",
-    "Disponibilidad": true
-  },
-  {
-    "Titulo": "Rayuela",
-    "Autor": "Julio Cort\u00E1zar",
-    "ISBN": "665544332211",
-    "Disponibilidad": true
+    "Title": "1984",
+    "Author": "George Orwell",
+    "ISBN": "5566778899",
+    "Available": false
   }
 ]

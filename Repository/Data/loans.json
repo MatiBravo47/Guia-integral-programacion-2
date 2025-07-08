@@ -1,0 +1,15 @@
+[
+  {
+    "Book": {
+      "Title": "1984",
+      "Author": "George Orwell",
+      "ISBN": "5566778899",
+      "Available": false
+    },
+    "User": {
+      "Name": "Matias",
+      "Email": "Matias@"
+    },
+    "Date": "2025-07-08T20:08:50.3637066-03:00"
+  }
+]

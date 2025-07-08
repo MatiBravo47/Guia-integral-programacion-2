@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Views
 {
-    public class PrestamoView
+    public class LoanView
     {
         public static void ShowMessage(string message) 
         {
