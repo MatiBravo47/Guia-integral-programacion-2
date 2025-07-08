@@ -1,0 +1,15 @@
+# Archivos y carpetas de Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Archivos temporales
+bin/
+obj/
+*.log
+
+# Archivos específicos de sistema operativo
+.DS_Store
+Thumbs.db
