@@ -79,7 +79,7 @@ namespace Controllers
                 Console.WriteLine("No hay productos registrados para mostrar.");
                 return;
             }
-            Console.WriteLine("Lista de productos:");
+            Console.WriteLine("=== Lista de productos ===");
             foreach (var product in productList)
             {
                 Console.WriteLine($"Indice: {index}");
